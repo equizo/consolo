@@ -14,7 +14,7 @@ namespace consolo
     private TelemetrySource telemetrySource;
     private ShopSource shopSource;
     private MetaSource metaSource;
-    private AiSource aisSource;
+    private AiSource aiSource;
     private GameplaySource gameplaySource;
 
     private void Start()
@@ -24,7 +24,7 @@ namespace consolo
       telemetrySource = new TelemetrySource();
       shopSource = new ShopSource();
       metaSource = new MetaSource();
-      aisSource = new AiSource();
+      aiSource = new AiSource();
       gameplaySource = new GameplaySource();
 
       telemetryButton.onClick.AddListener(OnTelemetry);
@@ -51,7 +51,7 @@ namespace consolo
 
     private void OnAi()
     {
-      aisSource.DoAiMethod();
+      aiSource.DoAiMethod();
     }
 
     private void OnGameplay()
@@ -63,6 +63,9 @@ namespace consolo
     {
       telemetryButton.onClick.RemoveListener(OnTelemetry);
       shopButton.onClick.RemoveListener(OnShop);
+      metaButton.onClick.RemoveListener(OnMeta);
+      aiButton.onClick.RemoveListener(OnAi);
+      gameplayButton.onClick.RemoveListener(OnGameplay);
     }
   }
 }
